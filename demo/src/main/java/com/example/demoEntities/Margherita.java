@@ -15,6 +15,7 @@ public class Margherita extends AbPizza implements IPizza {
 	public Margherita(Size size) {
 		super(size);
 
+
 	}
 
 	@Override
