@@ -23,86 +23,90 @@ public class Menu implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(DemoApplication.class);
 
-		//SALVATAGGIO NEL DB DI PIZZE//
-		
+		// SALVATAGGIO NEL DB DI MARGHERITA FAMILY//
 		Margherita margheritaFamily = (Margherita) ctx.getBean("getMargheritaFamily");
 		margheritaFamily.getCalories();
 		margheritaFamily.getNamePizza();
 		margheritaFamily.getPrice();
 		margheritaFamily.getSize();
-		pizzaSrv.create(margheritaFamily);
+		// pizzaSrv.create(margheritaFamily);
+		// SALVATAGGIO NEL DB DI MARGHERITA STANDARD//
 		Margherita margheritaStandard = (Margherita) ctx.getBean("getMargheritaStandard");
 		margheritaStandard.getCalories();
 		margheritaStandard.getNamePizza();
 		margheritaStandard.getPrice();
 		margheritaStandard.getSize();
-		pizzaSrv.create(margheritaStandard);
+		// pizzaSrv.create(margheritaStandard);
+		// SALVATAGGIO NEL DB DI HAWAIAN FAMILY//
 		HawaianPizza hawaianFamily = (HawaianPizza) ctx.getBean("getHawaianPizzaFamily");
 		hawaianFamily.getCalories();
 		hawaianFamily.getNamePizza();
 		hawaianFamily.getPrice();
 		hawaianFamily.getSize();
-		pizzaSrv.create(hawaianFamily);
+		// pizzaSrv.create(hawaianFamily);
+		// SALVATAGGIO NEL DB DI HAWAIAN STANDARD//
 		HawaianPizza hawaianStandard = (HawaianPizza) ctx.getBean("getHawaianPizzaStandard");
 		hawaianStandard.getCalories();
 		hawaianStandard.getNamePizza();
 		hawaianStandard.getPrice();
 		hawaianStandard.getSize();
-		pizzaSrv.create(hawaianStandard);
+		// pizzaSrv.create(hawaianStandard);
+		// SALVATAGGIO NEL DB DI SALAMI FAMILY//
 		SalamiPizza salamifamily = (SalamiPizza) ctx.getBean("getSalamiPizzaFamily");
 		salamifamily.getCalories();
 		salamifamily.getNamePizza();
 		salamifamily.getPrice();
 		salamifamily.getSize();
-		pizzaSrv.create(salamifamily);
+		// pizzaSrv.create(salamifamily);
+		// SALVATAGGIO NEL DB DI SALAMI STANDARD//
 		SalamiPizza salamiStandard = (SalamiPizza) ctx.getBean("getSalamiPizzaStandard");
 		salamiStandard.getCalories();
 		salamiStandard.getNamePizza();
 		salamiStandard.getPrice();
 		salamiStandard.getSize();
-		pizzaSrv.create(salamiStandard);
+		// pizzaSrv.create(salamiStandard);
 
-		// System.out.println(margheritaFamily.toString());
-//		System.out.println("MENU'");
-//		System.out.println("\n");
-//		System.out.println("Pizzas:");
-//
-//		System.out.println(ctx.getBean("getMargheritaFamily").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getMargheritaStandard").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getHawaianPizzaFamily").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getHawaianPizzaStandard").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getSalamiPizzaFamily").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getSalamiPizzaStandard").toString());
-//		System.out.println("**********");
-//		System.out.println("Toppings");
-//		System.out.println(ctx.getBean("getCheese").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getHam").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getOnion").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getSalami").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getPineapple").toString());
-//		System.out.println("**********\n");
-//
-//		System.out.println("Drinks:");
-//		System.out.println(ctx.getBean("getLemonade").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getWater").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getWine").toString());
-//		System.out.println("**********\n");
-//		System.out.println("Franchise:");
-//		System.out.println(ctx.getBean("getShirt").toString());
-//		System.out.println("**********");
-//		System.out.println(ctx.getBean("getMug").toString());
-//		System.out.println("**********");
+		System.out.println(margheritaFamily.toString());
+		System.out.println("MENU'");
+		System.out.println("\n");
+		System.out.println("Pizzas:");
+
+		System.out.println(ctx.getBean("getMargheritaFamily").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getMargheritaStandard").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getHawaianPizzaFamily").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getHawaianPizzaStandard").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getSalamiPizzaFamily").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getSalamiPizzaStandard").toString());
+		System.out.println("**********");
+		System.out.println("Toppings");
+		System.out.println(ctx.getBean("getCheese").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getHam").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getOnion").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getSalami").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getPineapple").toString());
+		System.out.println("**********\n");
+
+		System.out.println("Drinks:");
+		System.out.println(ctx.getBean("getLemonade").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getWater").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getWine").toString());
+		System.out.println("**********\n");
+		System.out.println("Franchise:");
+		System.out.println(ctx.getBean("getShirt").toString());
+		System.out.println("**********");
+		System.out.println(ctx.getBean("getMug").toString());
+		System.out.println("**********");
 		ctx.close();
 	}
 

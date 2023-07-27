@@ -1,5 +1,12 @@
 package com.example.demoEntities;
 
+import java.util.UUID;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,8 +15,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-
+@Entity
 public class Table {
+	@Id
+	@GeneratedValue
+	private UUID id;
+	@Enumerated(EnumType.STRING)
 	private StateTable stateTable;
 	private int numberTable;
 	private int maxOccupancy;

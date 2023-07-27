@@ -1,5 +1,6 @@
 package com.example.demoEntities;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.annotation.Order;
@@ -13,7 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @Order(1)
 public class TakeTable implements CommandLineRunner {
-
+	@Autowired
+	TableService tableSrv;
 	@Override
 	public void run(String... args) throws Exception {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(DemoApplication.class);
@@ -24,26 +26,31 @@ public class TakeTable implements CommandLineRunner {
 		Table table01 = (Table) ctx.getBean("getTable01");
 		System.out.println(table01.toString());
 		table01.checkTable();
+		tableSrv.create(table01);
 
 		// TAVOLO 02//
 		Table table02 = (Table) ctx.getBean("getTable02");
 		System.out.println(table02.toString());
 		table02.checkTable();
+		tableSrv.create(table02);
 
 		// TAVOLO 03//
 		Table table03 = (Table) ctx.getBean("getTable03");
 		System.out.println(table03.toString());
 		table03.checkTable();
+		tableSrv.create(table03);
 
 		// TAVOLO 04//
 		Table table04 = (Table) ctx.getBean("getTable04");
 		System.out.println(table04.toString());
 		table04.checkTable();
+		tableSrv.create(table04);
 
 		// TAVOLO 05//
 		Table table05 = (Table) ctx.getBean("getTable05");
 		System.out.println(table05.toString());
 		table05.checkTable();
+		tableSrv.create(table05);
 
 		// TAVOLO 06//
 		Table table06 = (Table) ctx.getBean("getTable");
@@ -52,6 +59,7 @@ public class TakeTable implements CommandLineRunner {
 		table06.setStateTable(StateTable.LIBERO);
 		System.out.println(table06.toString());
 		table06.checkTable();
+		tableSrv.create(table06);
 
 		// TAVOLO 07//
 		Table table07 = (Table) ctx.getBean("getTable");
@@ -60,6 +68,7 @@ public class TakeTable implements CommandLineRunner {
 		table07.setStateTable(StateTable.LIBERO);
 		System.out.println(table07.toString());
 		table07.checkTable();
+		tableSrv.create(table07);
 
 		// TAVOLO 08//
 		Table table08 = (Table) ctx.getBean("getTable");
@@ -68,6 +77,7 @@ public class TakeTable implements CommandLineRunner {
 		table08.setStateTable(StateTable.OCCUPATO);
 		System.out.println(table08.toString());
 		table08.checkTable();
+		tableSrv.create(table08);
 
 		// TAVOLO 09//
 		Table table09 = (Table) ctx.getBean("getTable");
@@ -76,6 +86,7 @@ public class TakeTable implements CommandLineRunner {
 		table09.setStateTable(StateTable.LIBERO);
 		System.out.println(table09.toString());
 		table09.checkTable();
+		tableSrv.create(table09);
 
 		// TAVOLO 10//
 		Table table10 = (Table) ctx.getBean("getTable");
@@ -84,6 +95,8 @@ public class TakeTable implements CommandLineRunner {
 		table10.setStateTable(StateTable.OCCUPATO);
 		System.out.println(table10.toString());
 		table10.checkTable();
+		tableSrv.create(table10);
+
 		System.out.println("**********");
 
 		ctx.close();
