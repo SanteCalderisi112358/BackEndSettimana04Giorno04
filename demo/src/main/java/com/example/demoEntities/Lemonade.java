@@ -1,25 +1,37 @@
 package com.example.demoEntities;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Lemonade extends AbDrink implements IDrink {
 
 	@Override
 	public String getNameDrink() {
-		return "Lemonade";
+		String name = "Lemonade";
+		this.name = name;
+		return name;
 	}
 
 	@Override
 	public double getSizeDrink() {
-		return 0.33;
+		double sizeDrink = 0.33;
+		this.sizeDrink = sizeDrink;
+		return sizeDrink;
 	}
 
 	@Override
 	public int getCaloriesDrink() {
-		return 128;
+		int calories = 128;
+		this.calories = calories;
+		return calories;
 	}
 
 	@Override
 	public double getPriceDrink() {
-		return 1.29;
+		double price = 1.29;
+		this.price = price;
+
+		return price;
 	}
 
 	@Override

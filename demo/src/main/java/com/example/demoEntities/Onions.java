@@ -1,23 +1,32 @@
 package com.example.demoEntities;
 
+import jakarta.persistence.Entity;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@Entity
+
 public class Onions extends AbTopping implements ITopping {
 
 	@Override
 	public String getNameTopping() {
-		return "Onions";
+		String name = "Onions";
+		this.name = name;
+		return name;
 	}
 
 	@Override
 	public int getCaloriesTopping() {
-		return 22;
+		int calories = 22;
+		this.calories = calories;
+		return calories;
 	}
 
 	@Override
 	public double getPriceTopping() {
-		return 0.69;
+		double price = 0.69;
+		this.price = price;
+		return price;
 	}
 
 	@Override

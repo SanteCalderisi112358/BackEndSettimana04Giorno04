@@ -19,7 +19,10 @@ import lombok.extern.slf4j.Slf4j;
 public class Menu implements CommandLineRunner {
 	@Autowired
 	PizzasService pizzaSrv;
-	@Override
+	@Autowired
+	DrinkService drinkSrv;
+	@Autowired
+	ToppingService toppingSrv;
 	public void run(String... args) throws Exception {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(DemoApplication.class);
 
@@ -66,6 +69,56 @@ public class Menu implements CommandLineRunner {
 		salamiStandard.getSize();
 		// pizzaSrv.create(salamiStandard);
 
+		/* SALVATAGGIO NEL DB DI LEMONADE */
+		Lemonade lemonade = (Lemonade) ctx.getBean("getLemonade");
+		lemonade.getCaloriesDrink();
+		lemonade.getNameDrink();
+		lemonade.getPriceDrink();
+		lemonade.getSizeDrink();
+		// drinkSrv.create(lemonade);
+		/* SALVATAGGIO NEL DB DI WATER */
+		Water water = (Water) ctx.getBean("getWater");
+		water.getCaloriesDrink();
+		water.getNameDrink();
+		water.getPriceDrink();
+		water.getSizeDrink();
+		// drinkSrv.create(water);
+
+		/* SALVATAGGIO NEL DB DI WINE */
+		Wine wine = (Wine) ctx.getBean("getWine");
+		wine.getCaloriesDrink();
+		wine.getNameDrink();
+		wine.getPriceDrink();
+		wine.getSizeDrink();
+		wine.getAlcool();
+		// drinkSrv.create(wine);
+
+		/* SALVATAGGIO NEL DB DI CHEESE */
+		Cheese cheese = (Cheese) ctx.getBean("getCheese");
+		cheese.getCaloriesTopping();
+		cheese.getNameTopping();
+		cheese.getPriceTopping();
+		// toppingSrv.create(cheese);
+		/* SALVATAGGIO NEL DB DI HAM */
+		Ham ham = (Ham) ctx.getBean("getHam");
+		ham.getCaloriesTopping();
+		ham.getNameTopping();
+		ham.getPriceTopping();
+		// toppingSrv.create(ham);
+		/* SALVATAGGIO NEL DB DI PINEAPPLE */
+		Pineapple pineapple = (Pineapple) ctx.getBean("getPineapple");
+		pineapple.getCaloriesTopping();
+		pineapple.getNameTopping();
+		pineapple.getPriceTopping();
+		// toppingSrv.create(pineapple);
+		/* SALVATAGGIO NEL DB DI ONIONS */
+		Onions onion = (Onions) ctx.getBean("getOnion");
+		onion.getCaloriesTopping();
+		onion.getNameTopping();
+		onion.getPriceTopping();
+		// toppingSrv.create(onion);
+
+		/* STAMPA MENU PIZZE */
 		System.out.println(margheritaFamily.toString());
 		System.out.println("MENU'");
 		System.out.println("\n");

@@ -1,21 +1,29 @@
 package com.example.demoEntities;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Cheese extends AbTopping implements ITopping {
 
 	@Override
 	public String getNameTopping() {
-
-		return "Cheese";
+		String name = "Cheese";
+		this.name = name;
+		return name;
 	}
 
 	@Override
 	public int getCaloriesTopping() {
-		return 92;
+		int calories = 92;
+		this.calories = calories;
+		return calories;
 	}
 
 	@Override
 	public double getPriceTopping() {
-		return 0.69;
+		double price = 0.69;
+		this.price = price;
+		return price;
 	}
 
 	@Override
